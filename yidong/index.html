@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>移动web</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <style>
+        /*decoration:修饰 underline:下划线*/
+
+        h1 {
+            text-decoration: overline
+        }
+
+        /*上划线*/
+
+        h2 {
+            text-decoration: line-through
+        }
+
+        /*中划线*/
+
+        h3 {
+            text-decoration: underline
+        }
+
+        /*下划线*/
+
+        h4 {
+            text-decoration: blink
+        }
+
+        /*无效果*/
+
+        a {
+            text-decoration: none
+        }
+
+        /*无*/
+
+        /*全局样式清0*/
+
+        body,
+        div,
+        dl,
+        dt,
+        dd,
+        ul,
+        ol,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code,
+        form,
+        fieldset,
+        legend,
+        input,
+        textarea,
+        p,
+        blockquote,
+        th,
+        td,
+        hr,
+        button,
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            padding: 0;
+            margin: 0;
+        }
+
+        /*a标签去掉下划线*/
+
+        a {
+            text-decoration: none;
+        }
+
+        /*body字体样式设置*/
+
+        body {
+            font: 16px '微软雅黑';
+            background: #FAF2DA;
+        }
+
+        /*
+    body设置2
+    body{
+         font-family:Tahoma,Arial,Helvetica,"宋体";font-size:12px;text-align:center;background:#FFF;color:#000;
+    }    
+    */
+
+        /*ul,ol去掉前面的符号*/
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        /*border全部设置为0*/
+
+        div,
+        dl,
+        dt,
+        dd,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        img,
+        ol,
+        ul,
+        li,
+        table,
+        th,
+        td,
+        p,
+        span,
+        a {
+            border: 0;
+        }
+
+        /*去掉图片边框和input边框为0px，垂直居中对齐*/
+
+        img,
+        input {
+            border: none;
+            vertical-align: middle;
+        }
+
+        /*
+    类容溢出裁剪
+    div{
+        overflow-x:hidden;
+        overflow-y:hidden;
+    }
+    */
+
+        /*按钮去边框*/
+
+        button {
+            border: none;
+        }
+
+
+
+
+
+
+
+
+        /* 去默认边距 */
+
+        ul,
+        li,
+        p {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        p {
+            color: #293F67;
+        }
+
+        body {
+            font: 16px '微软雅黑';
+            background: #FAF2DA;
+        }
+
+        /* 去掉a标签下划线 */
+
+        a {
+            text-decoration: none;
+        }
+
+        .all {
+            background: #FAF2DA;
+            width: 1024px;
+            margin: 0 auto;
+            border: 2px solid black;
+            box-sizing: border-box;
+            overflow: auto;
+
+        }
+
+        .header-nav a {
+            color: aliceblue;
+
+        }
+
+        #main-nav {
+            width: 1020px;
+            /* margin-left:-25px; */
+            margin-bottom: 15px;
+            height: 44px;
+            position: relative;
+            background: black;
+            /* line-height:1.4; */
+            box-shadow: inset 0 1px rgba(255, 255, 255, .3), 1px 1px rgba(1, 1, 1, .4);
+        }
+
+        #main-nav li {
+            float: left;
+            margin-left: 20px;
+            display: list-item;
+            text-align: -webkit-match-parent;
+        }
+
+        #main-nav li a {
+            color: white;
+            font-weight: bold;
+            padding: 11.5px 15px;
+            display: block;
+        }
+
+        #main-nav li a:hover {
+            background: #C4BFBF;
+        }
+
+        .img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .img img {
+            width: 600px;
+            position: absolute;
+            /* top:-25px; */
+        }
+
+        .article {
+            position: relative;
+            clear: both;
+            margin-bottom: 10px;
+        }
+
+        .tips {
+            position: absolute;
+            top: 5px;
+            left: 0;
+        }
+
+        .date {
+            background: black;
+            color: #fff;
+            float: left;
+            padding-left: 10px;
+        }
+
+        .triangle {
+            float: left;
+            border: 10.5px solid black;
+            border-color: transparent transparent transparent black;
+        }
+
+        .author {
+            width: 80px;
+            float: left;
+            margin: 0 20px 5px 0;
+
+        }
+
+        .author img {
+            width: 80px;
+            float: left;
+        }
+
+        .title {
+            font-weight: bolder;
+            font-size: 19px;
+            text-shadow: 0 0 5px rgba(48, 48, 48, 0.6);
+            margin-bottom: 5px;
+            cursor: pointer;
+            padding-left: 10px;
+        }
+
+        .nums {
+            line-height: 21px;
+        }
+
+        .rectangle {
+            background: #ebeb46;
+            float: right;
+            width: 300px;
+            height: 20px;
+            padding-right: 20px;
+            color: #858585;
+        }
+
+        .trangleLB {
+            border: 10px solid;
+            border-color: transparent #ebeb46 #ebeb46 transparent;
+            float: right;
+        }
+
+        .nums span {
+            margin-right: 10px;
+            float: right;
+        }
+
+        .icon {
+            background: url(images/icons.png) no-repeat;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            line-height: 14px;
+        }
+
+        .icon-heart {
+            background-position: -96px 0;
+        }
+
+        .icon-share {
+            background-position: -120px -72px;
+        }
+
+        .icon-comment {
+            background-position: -240px -120px;
+        }
+
+        .article .hr {
+            border-bottom: 2px solid dimGray;
+            width: 400px;
+            margin-left: 200px;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .content {
+            width: 600px;
+            float: left;
+            clear: both;
+            padding-left: 20px;
+        }
+
+        /* 右侧边 */
+
+        .sidebar {
+            width: 280px;
+            float: right;
+            padding-right: 20px;
+            /* border:1px solid black; */
+        }
+
+        .widget {
+            background: #fffcf0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), 0 1px 1px rgba(0, 0, 0, .4);
+        }
+
+        .title {
+            color: #d1d648;
+            font-weight: bold;
+            background: #414039;
+            border-radius: 8px 8px 0 0;
+            font-size: 19px;
+            text-shadow: 0 0 5px rgba(48, 48, 48, .6);
+            cursor: pointer;
+
+        }
+
+        .folder {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .folder li {
+            border-bottom: 1px solid #7c7c7c;
+            padding: 8px 0 8px 15px;
+            color: #7c7c7c;
+            cursor: pointer;
+        }
+
+        .folder li:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+
+        .folder li:hover {
+            background: #fff;
+            text-decoration: underline;
+        }
+
+        .clearfix::after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
+
+        .faces img {
+            width: 60px;
+            height: 60px;
+            display: block;
+            float: left;
+        }
+
+        .faces li {
+            float: left;
+            margin: 8px 4px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, .17);
+            cursor: none;
+        }
+
+        #slider img {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .comment {
+            overflow: hidden;
+        }
+
+        .comment li {
+            padding: 5px;
+            height: 45px;
+            line-height: 45px;
+            font-size: 14px;
+        }
+
+        .comment img {
+            width: 32px;
+            margin: 2px;
+            float: left;
+        }
+
+        .comment .desc {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 230px;
+        }
+
+        .name {
+            color: #1dafe7;
+            margin: 0 5px;
+        }
+
+        .desc span {
+            overflow: hidden;
+        }
+
+        /* footer */
+
+        #footer {
+            clear: both;
+            background: black;
+            color: #838383;
+            padding: 20px 0;
+            width: 1030px;
+            margin-bottom: -5px;
+            text-align: center;
+        }
+
+        .top-p {
+            color: #7c7c7c;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <!-- 头部 -->
+        <header class="pagewrap">
+
+            <p class="top-p">现在是手机当电脑用，电脑当电视机用，电视机当摆设</p>
+            <nav>
+                <ul id="main-nav" class="clearfix">
+                    <li>
+                        <a href="">首页</a>
+                    </li>
+                    <li>
+                        <a href="">娱乐</a>
+                    </li>
+                    <li>
+                        <a href="">财经</a>
+                    </li>
+                    <li>
+                        <a href="">游戏</a>
+                    </li>
+                    <li>
+                        <a href="">客服联系</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- 左侧content -->
+        <div class="content">
+            <!-- 轮播 -->
+            <section id="slider">
+                <img src="images/slider_p.png">
+            </section>
+            <!-- 左侧主体 -->
+            <section class="articles">
+                <article class="article">
+                    <div class="img">
+                        <img src="images/img1.jpg" alt="">
+                        <div class="tips">
+                            <div class="date">2018/06/9</div>
+                            <i class="triangle"></i>
+                        </div>
+                    </div>
+                    <div class="author">
+                        <img src="images/face08.jpg">
+                    </div>
+                    <div class="title">
+                        墨西哥专家称“世界末日”是对雅玛历法读解错误
+                    </div>
+                    <div class="nums">
+                        <div class="rectangle">
+                            <span>
+                                <i class="icon icon-heart" title="喜欢"></i>
+                                (461)
+                            </span>
+                            <span>
+                                <i class="icon icon-share" title="分享"></i>
+                                (106)
+                            </span>
+                            <span>
+                                <i class="icon icon-comment" title="评论"></i>
+                                (15)
+                            </span>
+                        </div>
+                        <i class="trangleLB"></i>
+                    </div>
+                    <i class=hr>&nbsp;</i>
+                    <div class="desc">
+                        墨西哥-- 关注“失落的文明” 大量被“世界末日说”吸引的游客 赶到墨西哥尤卡坦半岛等玛雅文明曾经存在的地区参观旅游。 墨西哥国立自治大学教授丹尼尔・ 弗洛雷斯称，关于玛雅人“世界末日”的说法是对玛雅人历法的错误解读。他表示，玛雅人曾经在天
+                        文学领域取得了很高的造诣...
+                    </div>
+                </article>
+                <article class="article">
+                    <article class="article">
+                        <div class="img">
+                            <img src="images/img2.jpg" alt="">
+                            <div class="tips">
+                                <div class="date">2018/06/9</div>
+                                <i class="triangle"></i>
+                            </div>
+                        </div>
+                        <div class="author">
+                            <img src="images/face08.jpg">
+                        </div>
+                        <div class="title">
+                            墨西哥专家称“世界末日”是对雅玛历法读解错误
+                        </div>
+                        <div class="nums">
+                            <div class="rectangle">
+                                <span>
+                                    <i class="icon icon-heart" title="喜欢"></i>
+                                    (461)
+                                </span>
+                                <span>
+                                    <i class="icon icon-share" title="分享"></i>
+                                    (106)
+                                </span>
+                                <span>
+                                    <i class="icon icon-comment" title="评论"></i>
+                                    (15)
+                                </span>
+                            </div>
+                            <i class="trangleLB"></i>
+                        </div>
+                        <i class=hr>&nbsp;</i>
+                        <div class="desc">
+                            墨西哥-- 关注“失落的文明” 大量被“世界末日说”吸引的游客 赶到墨西哥尤卡坦半岛等玛雅文明曾经存在的地区参观旅游。 墨西哥国立自治大学教 授丹尼尔・ 弗洛雷斯称，关于玛雅人“世界末日”的说法是对玛雅人历法的错误解读。他表示，玛雅人曾经在天
+                            文学领域取得了很高的造诣...
+                        </div>
+                    </article>
+                    <article class="article">
+                        <article class="article">
+                            <div class="img">
+                                <img src="images/img3.jpg" alt="">
+                                <div class="tips">
+                                    <div class="date">2018/06/9</div>
+                                    <i class="triangle"></i>
+                                </div>
+                            </div>
+                            <div class="author">
+                                <img src="images/face08.jpg">
+                            </div>
+                            <div class="title">
+                                墨西哥专家称“世界末日”是对雅玛历法读解错误
+                            </div>
+                            <div class="nums">
+                                <div class="rectangle">
+                                    <span>
+                                        <i class="icon icon-heart" title="喜欢"></i>
+                                        (461)
+                                    </span>
+                                    <span>
+                                        <i class="icon icon-share" title="分享"></i>
+                                        (106)
+                                    </span>
+                                    <span>
+                                        <i class="icon icon-comment" title="评论"></i>
+                                        (15)
+                                    </span>
+                                </div>
+                                <i class="trangleLB"></i>
+                            </div>
+                            <i class=hr>&nbsp;</i>
+                            <div class="desc">
+                                墨西哥-- 关注“失落的文明” 大量被“世界末日说”吸引的游客 赶到墨西哥尤卡坦半岛等玛雅文明曾经存在的地区参观旅游。 墨西哥国立自治大学 教授丹尼尔・ 弗洛雷斯称，关于玛雅人“世界末日”的说法是对玛雅人历法的错误解读。他表示，玛雅人曾经在天
+                                文学领域取得了很高的造诣...
+                            </div>
+                        </article>
+                        <article class="article">
+                            <article class="article">
+                                <div class="img">
+                                    <img src="images/img4.jpg" alt="">
+                                    <div class="tips">
+                                        <div class="date">2018/06/9</div>
+                                        <i class="triangle"></i>
+                                    </div>
+                                </div>
+                                <div class="author">
+                                    <img src="images/face08.jpg">
+                                </div>
+                                <div class="title">
+                                    墨西哥专家称“世界末日”是对雅玛历法读解错误
+                                </div>
+                                <div class="nums">
+                                    <div class="rectangle">
+                                        <span>
+                                            <i class="icon icon-heart" title="喜欢"></i>
+                                            (461)
+                                        </span>
+                                        <span>
+                                            <i class="icon icon-share" title="分享"></i>
+                                            (106)
+                                        </span>
+                                        <span>
+                                            <i class="icon icon-comment" title="评论"></i>
+                                            (15)
+                                        </span>
+                                    </div>
+                                    <i class="trangleLB"></i>
+                                </div>
+                                <i class=hr>&nbsp;</i>
+                                <div class="desc">
+                                    墨西哥-- 关注“失落的文明” 大量被“世界末日说”吸引的游客 赶到墨西哥尤卡坦半岛等玛雅文明曾经存在的地区参观旅游。 墨西哥国立自治大学教授 丹尼尔・ 弗洛雷斯称，关于玛雅人“世界末日”的说法是对玛雅人历法的错误解读。他表示，玛雅人曾经在天
+                                    文学领域取得了很高的造诣...
+                                </div>
+                            </article>
+            </section>
+        </div>
+        <!-- 右侧导航 -->
+        <aside class="sidebar">
+            <section class="widget">
+                <div class="title">分类文章</div>
+                <ul class="folder">
+                    <li>小明吃饭没</li>
+                    <li>侧漏</li>
+                    <li>鸡蛋</li>
+                    <li>阉割你妹夫</li>
+                </ul>
+            </section>
+            <section class="widget">
+                <div class="title">userimg</div>
+                <ul class="faces clearfix">
+                    <li>
+                        <img src="images/face01.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face02.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face03.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face04.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face05.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face06.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face07.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face08.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face09.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face10.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face11.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face12.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face13.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face14.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="images/face15.jpg" alt="">
+                    </li>
+
+                </ul>
+            </section>
+
+            <section class="widget">
+                <div class="title">最新吐槽</div>
+                <ul class="comment">
+                    <li>
+                        <img src="images/face16.jpg" alt="">
+                        <p class="desc" title="那天我遇到个女孩，又在那天我能再约见她">
+                            <span class="name">叫我哥</span>
+                            <span>那天我遇到个女孩，又在那天我能遇见她...</span>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="images/face05.jpg" alt="">
+                        <p class="desc" title="那天我遇到个女孩，又在那天我能再约见她">
+                            <span class="name">遇见</span>
+                            <span>那天我遇到个女孩，又在那天我能遇见她...</span>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="images/face10.jpg" alt="">
+                        <p class="desc" title="那天我遇到个女孩，又在那天我能再约见她">
+                            <span class="name">小黄</span>
+                            <span>那天我遇到个女孩，又在那天我能遇见她...</span>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="images/face11.jpg" alt="">
+                        <p class="desc" title="那天我遇到个女孩，又在那天我能再约见她">
+                            <span class="name">格调</span>
+                            <span>那天我遇到个女孩，又在那天我能遇见她...</span>
+                        </p>
+                    </li>
+
+                </ul>
+            </section>
+        </aside>
+        <!-- 底部 -->
+        <footer id="footer">
+            <p>
+                "类容样式和图片参考"
+                <a href="http://themify.me/" target="new1">wordpress模板</a>
+                <a href="http://www.yuemee.com" target="new2">悦米网</a>
+            </p>
+            <div>
+                <span>
+                    "Copyright@ 1998 - 2018 williamTank.All Rights Reserved "
+                    <a href="#">联系我们</a>
+                    <a href="#">侵权投诉</a>
+                </span>
+                <p>这是一个DE页面</p>
+            </div>
+        </footer>
+
+
+
+
+    </div>
+
+    <script>
+        $('document').ready(function () {  //定义加载完成html,css后加载jquery;
+            $("#start").html("Go!");
+            // $('#start').text('go');
+            // $('#start').html('gg');
+            $('#start').css({ "color": "red" });
+        });
+
+    </script>
+</body>
+
+</html>

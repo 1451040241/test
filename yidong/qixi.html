@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #div1 {
+            color:#6C67E8;
+            font-size:20px;
+            background:#D6DEAF;
+            text-align:center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //定时器每秒调用一次fnDate()
+            setInterval(function () {
+                fnDate();
+            }, 1000);
+        }
+        //js 获取当前时间
+        function fnDate() {
+            var oDiv = document.getElementById("div1");
+            var date = new Date();
+            var year = date.getFullYear();//当前年份
+            var month = date.getMonth();//当前月份
+            var data = date.getDate();//天
+            var hours = date.getHours();//小时
+            var minute = date.getMinutes();//分
+            var second = date.getSeconds();//秒
+            var time = year + "-" + fnW((month + 1)) + "-" + fnW(data) + " " + fnW(hours) + ":" + fnW(minute) + ":" + fnW(second);
+            // var time=(month+1)+'月'+data+'日'+hours+'时'+minute+'分'+second+'秒';
+            oDiv.innerHTML = time;
+
+        }
+        //补位 当某个字段不是两位数时补0
+        function fnW(str) {
+            var num;
+            str > 10 ? num = str : num = "0" + str;
+            return num;
+        }
+
+
+        //  时间毫秒转为常用时间格式
+        // toLocaleString()
+        var unixTimestamp = new Date(1477386005 * 1000);
+        commonTime = unixTimestamp.toLocaleString();
+        console.log(commonTime);
+
+
+        // var htmls = '<div id=\"div1\"></div>';
+
+    </script>
+</head>
+
+<body>
+
+    <div id="div1"></div>
+</body>
+
+</html>
